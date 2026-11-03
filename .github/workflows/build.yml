@@ -24,6 +24,10 @@ jobs:
           sdkmanager "platforms;android-34" "build-tools;34.0.0"
       - name: Build release APK
         run: gradle assembleRelease
+      - name: Verify APK signature
+        run: |
+          APKSIGNER=$(ls "$ANDROID_SDK_ROOT"/build-tools/34.0.0/apksigner)
+          "$APKSIGNER" verify --verbose --print-certs app/build/outputs/apk/release/*.apk
       - uses: actions/upload-artifact@v4
         with:
           name: chromecatch-apk

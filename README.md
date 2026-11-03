@@ -18,3 +18,6 @@ Or locally: `gradle assembleRelease` (requires the Android SDK + the Android Gra
 - There's a 15s debounce so rapid tab switches inside Chrome don't spam captures.
 - If the selfie capture fails (e.g. phone is face-down, camera busy), the collage still saves with just the screenshot half.
 - No icon pack, no network calls — everything stays local, nothing leaves the device.
+
+## Signing
+Release builds are signed with `app/release.keystore` (alias `chromecatch`), so the APK installs directly and later builds update over earlier ones. This repo is public, so treat that key as non-secret: fine for a sideloaded personal app, not for anything you distribute.
