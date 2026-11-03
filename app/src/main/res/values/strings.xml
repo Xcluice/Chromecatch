@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChromeCatch</string>
+    <string name="notif_channel">ChromeCatch Monitor</string>
+    <string name="notif_text">Watching for Chrome opens</string>
+</resources>
